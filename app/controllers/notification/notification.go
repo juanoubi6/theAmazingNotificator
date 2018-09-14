@@ -6,6 +6,4 @@ func GetNotifications(c *gin.Context) {
 
 }
 
-func GetNotificationAmount(c *gin.Context) {
 
-}

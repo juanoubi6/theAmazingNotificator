@@ -48,7 +48,7 @@ func GetConfig() *Config {
 func newConfig() Config {
 	return Config{
 		ENV:  GetEnv("ENV", "develop"),
-		PORT: GetEnv("PORT", "5000"),
+		PORT: GetEnv("PORT", "5004"),
 
 		DB_TYPE:     GetEnv("DB_TYPE", "mysql"),
 		DB_USERNAME: GetEnv("DB_USERNAME", "root"),
