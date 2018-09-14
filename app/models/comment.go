@@ -35,4 +35,3 @@ func GetCommentById(id uint) (Comment, bool, error) {
 
 	return comment, true, nil
 }
-

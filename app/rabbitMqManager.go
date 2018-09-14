@@ -281,13 +281,13 @@ func createCommentCommentNotification(messageChannel <-chan amqp.Delivery) {
 			}).Info(err.Error())
 		}
 
-		notificationMessage,recipient,err := models.CreateCommentCommentNotificationMessage(notificationMessageData.FatherCommentID,notificationMessageData.CommentID)
+		notificationMessage, recipient, err := models.CreateCommentCommentNotificationMessage(notificationMessageData.FatherCommentID, notificationMessageData.CommentID)
 
 		//Create the notification and save it
 		newNotification := models.Notification{
-			Message: notificationMessage,
-			UserID:  recipient,
-			NotificationTypeID:models.CommentComment,
+			Message:            notificationMessage,
+			UserID:             recipient,
+			NotificationTypeID: models.CommentComment,
 		}
 
 		if err := newNotification.Save(); err != nil {
@@ -312,13 +312,13 @@ func createPostCommentNotification(messageChannel <-chan amqp.Delivery) {
 			}).Info(err.Error())
 		}
 
-		notificationMessage,recipient,err := models.CreatePostCommentNotificationMessage(notificationMessageData.PostID,notificationMessageData.CommentID)
+		notificationMessage, recipient, err := models.CreatePostCommentNotificationMessage(notificationMessageData.PostID, notificationMessageData.CommentID)
 
 		//Create the notification and save it
 		newNotification := models.Notification{
-			Message: notificationMessage,
-			UserID:  recipient,
-			NotificationTypeID:models.PostComment,
+			Message:            notificationMessage,
+			UserID:             recipient,
+			NotificationTypeID: models.PostComment,
 		}
 
 		if err := newNotification.Save(); err != nil {
@@ -341,13 +341,13 @@ func createPostVoteNotification(messageChannel <-chan amqp.Delivery) {
 			}).Info(err.Error())
 		}
 
-		notificationMessage,recipient,err := models.CreatePostVoteNotificationMessage(notificationMessageData.PostID,notificationMessageData.VotingUserID)
+		notificationMessage, recipient, err := models.CreatePostVoteNotificationMessage(notificationMessageData.PostID, notificationMessageData.VotingUserID)
 
 		//Create the notification and save it
 		newNotification := models.Notification{
-			Message: notificationMessage,
-			UserID:  recipient,
-			NotificationTypeID:models.PostVote,
+			Message:            notificationMessage,
+			UserID:             recipient,
+			NotificationTypeID: models.PostVote,
 		}
 
 		if err := newNotification.Save(); err != nil {
